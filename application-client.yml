@@ -1,0 +1,28 @@
+spring:
+  profiles:
+    active:
+      - dev
+
+---
+server:
+  port:  7031
+spring:
+  profiles: dev
+  application:
+    name: spring-cloud-config-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/ #eureka server 地址
+
+---
+server:
+  port:  7032
+spring:
+  profiles: test
+  application:
+    name: spring-cloud-config-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/ #eureka server 地址
